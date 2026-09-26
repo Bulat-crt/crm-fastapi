@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Create account · CRM</title><link rel="stylesheet" href="/app/css/style.css"></head>
+<body>
+<div class="auth-page">
+  <section class="auth-art">
+    <div class="brand"><div class="brand-mark">CR</div><div><div class="brand-name">CRM</div><div class="brand-sub">Client work, without clutter</div></div></div>
+    <div class="auth-title"><div class="eyebrow">Start clean</div><h1>Build a quieter<br>client desk.</h1><p>Create your workspace, then use the dashboard to keep client details, tasks, and notes together.</p></div>
+    <div class="auth-quote">Your first win is knowing exactly what is happening next.</div>
+  </section>
+  <section class="auth-panel">
+    <div class="auth-card">
+      <div class="eyebrow">New workspace member</div><h2 style="margin-top:8px;font-size:2rem">Create account</h2><p class="lede" style="margin-bottom:22px">Your public registration endpoint creates a user with the backend's default role.</p>
+      <div id="errorBox" class="toast bad" hidden style="margin-bottom:14px"></div>
+      <form id="registerForm" class="auth-form">
+        <div class="field"><label class="label">Name</label><input class="input" name="name" required></div>
+        <div class="field"><label class="label">Email</label><input class="input" name="email" type="email" required></div>
+        <div class="field"><label class="label">Password</label><input class="input" name="password" type="password" minlength="8" required></div>
+        <button class="btn btn-primary btn-full" type="submit">Create account</button>
+      </form>
+      <div class="auth-switch">Already have an account? <a href="/app/login.html">Sign in</a></div>
+    </div>
+  </section>
+</div>
+<script type="module" src="/app/js/register.js"></script>
+</body></html>

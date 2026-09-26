@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign in · CRM</title><link rel="stylesheet" href="/app/css/style.css"></head>
+<body>
+<div class="auth-page">
+  <section class="auth-art">
+    <div class="brand"><div class="brand-mark">CR</div><div><div class="brand-name">CRM</div><div class="brand-sub">Client work, without clutter</div></div></div>
+    <div class="auth-title"><div class="eyebrow">Private workspace</div><h1>Know the work.<br>Move the work.</h1><p>A dark, editorial CRM for keeping clients, tasks, and conversations in one calm place.</p></div>
+    <div class="auth-quote">“The best dashboard is the one that leaves room for the actual work.”</div>
+  </section>
+  <section class="auth-panel">
+    <div class="auth-card">
+      <div class="eyebrow">Welcome back</div><h2 style="margin-top:8px;font-size:2rem">Sign in</h2><p class="lede" style="margin-bottom:22px">Use your email and password. The backend handles the JWT session.</p>
+      <div id="errorBox" class="toast bad" hidden style="margin-bottom:14px"></div>
+      <form id="loginForm" class="auth-form">
+        <div class="field"><label class="label">Email</label><input class="input" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label class="label">Password</label><input class="input" name="password" type="password" autocomplete="current-password" required></div>
+        <button class="btn btn-primary btn-full" type="submit">Enter workspace</button>
+      </form>
+      <div class="auth-switch">Need an account? <a href="/app/register.html">Create one</a></div>
+    </div>
+  </section>
+</div>
+<script type="module" src="/app/js/login.js"></script>
+</body></html>

@@ -58,8 +58,6 @@ def decode_access_token(token: str) -> int:
 
 
 def hash_password(password: str) -> str:
-    print("HASH INPUT:", repr(password))
-    print("len chars:", len(password), "len bytes:", len(password.encode("utf-8")))
     return pwd_context.hash(password)
 
 def verify_password(password: str, password_hash: str) -> bool:

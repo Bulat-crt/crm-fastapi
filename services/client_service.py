@@ -61,8 +61,8 @@ def update_user_client(
     if client.manager_id != manager_id:
         return False
 
-    update_client(session, client_id, new_name, new_phone, new_email)
-    return True
+    client = update_client(session, client_id, new_name, new_phone, new_email)
+    return client
 
 def delete_user_client(
     session: Session,

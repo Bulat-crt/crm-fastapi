@@ -81,7 +81,8 @@ def update_client(
     client.phone = phone
     client.email = email
     session.commit()
-    return True
+    session.refresh(client)
+    return client
 
 def delete_client(
     session: Session,

@@ -54,8 +54,8 @@ CRM/
 Clone the repository:
 
 ```bash
-git clone <https://github.com/Bulat-crt?tab=repositories>
-cd CRM
+git clone https://github.com/Bulat-crt/crm-fastapi.git
+cd crm-fastapi
 ```
 
 Create and activate a virtual environment:

@@ -10,7 +10,7 @@ from services.client_service import create_client, clients_manager, get_current_
 
 router = APIRouter()
 
-@router.post("/clients", response_model=ClientResponse)
+@router.post("/clients", response_model=ClientResponse, status_code=201)
 def create_new_client(
     client: ClientCreate, 
     current_user: User = Depends(get_current_user), 
@@ -88,7 +88,7 @@ def update_current_client(
     
     return acces_update
 
-@router.delete("/clients/{client_id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/clients/{client_id}", status_code=204)
 def delete_current_client(
     client_id: int, 
     current_user: User = Depends(get_current_user), 

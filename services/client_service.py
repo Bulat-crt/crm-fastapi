@@ -10,7 +10,7 @@ def create_client(
     email: str | None, 
     manager_id: int
 ):
-    client = create_client_db(session, phone, name, email, manager_id)
+    client = create_client_db(session, name, phone, email, manager_id)
     return client
 
 def clients_manager(

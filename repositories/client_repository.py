@@ -72,7 +72,7 @@ def update_client(
     name: str,
     phone: str,
     email: str | None = None
-) -> bool:
+) -> Client:
     statement = select(Client).where(Client.id == client_id)
     client = session.scalars(statement).first()
     if not client:

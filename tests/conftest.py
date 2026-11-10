@@ -6,6 +6,8 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from data_base import get_db
 from main import app
+from enums.role import Role
+from models import User
 
 
 load_dotenv()
@@ -114,3 +116,39 @@ def other_auth_headers(client, other_manager):
     return {
         "Authorization": f"Bearer {token}"
     }
+
+@pytest.fixture
+def admin(client):
+    response = client.post(
+        "/auth/register",
+        json={
+            "name": "Test Admin",
+            "email": "admin@test.com",
+            "password": "123321123",
+        },
+    )
+    assert response.status_code == 201, response.text
+    admin_data = response.json()
+
+    with TestSessionLocal() as db:
+        user = db.get(User, admin_data["id"])
+        assert user is not None
+        user.role = Role.ADMIN
+        db.commit()
+
+    admin_data["role"] = Role.ADMIN.value
+    return admin_data
+
+
+@pytest.fixture
+def admin_auth_headers(client, admin):
+    response = client.post(
+        "/auth/login",
+        data={
+            "username": admin["email"],
+            "password": "123321123",
+        },
+    )
+    assert response.status_code == 200, response.text
+    token = response.json()["access_token"]
+    return {"Authorization": f"Bearer {token}"}

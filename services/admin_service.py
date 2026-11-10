@@ -64,3 +64,5 @@ def admin_get_task(session: Session, task_id: int):
             detail='Нет такого задания'
         )
 
+    return task
+

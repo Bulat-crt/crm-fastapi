@@ -1,7 +1,7 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
-    test_database_url: str
+    test_database_url: str | None = None
     database_url: str
     secret_key: str
     algorithm: str = "HS256"
